@@ -47,7 +47,8 @@ for csv in csv_files:
     df.iloc[:, :-1] = df.iloc[:, :-1].round(4)
     # Rounding the last column to two decimal places
     df.iloc[:, -1] = df.iloc[:, -1].round(2)
-
+    
+    # save df as csv file
     file_name = os.path.join(folder_path, re.search(r'results_(.*?)\.csv', csv).group(1))
     df.to_csv(file_name + '.csv', index=False)
 
