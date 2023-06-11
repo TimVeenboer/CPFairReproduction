@@ -17,3 +17,4 @@ dependencies:
     - cornac==1.14.2
     - ipykernel==6.16.2
     - protobuf==3.20.0
+    - yaml

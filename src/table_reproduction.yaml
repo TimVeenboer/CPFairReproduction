@@ -1,0 +1,14 @@
+# datasets, the active-inactive user split and short-head/long-tail item split. 
+ds_names: ['Gowalla', 'Epinion']
+ds_user_groups: ['005']
+ds_item_groups: ['020']
+no_of_user_groups: 2
+no_of_item_groups: 2
+topk: 50
+
+# fairness categories to optimize, N: No fairness optimization, C: Consumer fairness, P: Producer
+# fairness, CP: Consumer and Producer fairness
+fairness_categories: ['N', 'C', 'P', 'CP']
+
+user_epsilon: [0.05]
+item_epsilon: [0.05]
