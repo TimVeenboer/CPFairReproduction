@@ -7,6 +7,7 @@ from cornac.eval_methods import BaseMethod
 import pandas as pd
 
 from clean_results import clean_results
+from boxplot import create_boxplots
 from dataset_utils import *
 from matrices import *
 from metrics import metric_per_group, metric_on_all
@@ -119,7 +120,6 @@ class Experiment():
         experiment_results = {}
 
         for dataset in self.config['ds_names']:
-            experiment_results[dataset] = []
 
             eval_method, total_users, total_items, \
                 train_checkins, pop_items, ground_truth, exp = _run_cornac_experiment(
@@ -322,10 +322,16 @@ class Experiment():
                                             P=P
                                         )
 
-                        results_df = clean_results(results_df)
-                        results_df.to_csv(
-                            f"results/{experiment_time_run}/results_{dataset}_{model.name}.csv", index=False)
+                        if dataset in experiment_results:
+                            experiment_results[dataset] = pd.concat([experiment_results[dataset], clean_results(results_df)])
+                        else:
+                            experiment_results[dataset] = clean_results(results_df)
+
+            experiment_results[dataset].to_csv(
+                f"results/{experiment_time_run}/results_{dataset}.csv", index=False)
+            
+            if self.config['boxplot']:
+                create_boxplots(f"results/{experiment_time_run}/boxplots", dataset, experiment_results[dataset])
                         
-                        experiment_results[dataset].append(results_df)
         return experiment_results
                         

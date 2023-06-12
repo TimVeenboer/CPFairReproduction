@@ -1,5 +1,5 @@
 # datasets, the active-inactive user split and short-head/long-tail item split. 
-ds_names: ['Gowalla', 'Epinion']
+ds_names: ['Gowalla', 'Epinion', 'AmazonOffice','AmazonToy','BookCrossing','Foursquare','LastFM','MovieLens100K']
 ds_user_groups: ['005']
 ds_item_groups: ['020']
 no_of_user_groups: 2
@@ -12,3 +12,5 @@ fairness_categories: ['N', 'C', 'P', 'CP']
 
 user_epsilon: [0.05]
 item_epsilon: [0.05]
+
+boxplot: True
