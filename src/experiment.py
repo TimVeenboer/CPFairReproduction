@@ -322,4 +322,3 @@ class Experiment():
                         results_df.to_csv(
                             f"results/{experiment_time_run}/results_{dataset}_{model.name}.csv", index=False)
                         
-                        return results_df
