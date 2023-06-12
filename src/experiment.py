@@ -154,9 +154,6 @@ class Experiment():
                           and No. of Longtaill Items: {len(longtail_item_ids)}")
 
                     for model in exp.models:
-                        # results = open(
-                        #     f"results/{experiment_time_run}/results_{dataset}_{model.name}.csv", 'w')
-                        # results.write("Dataset,Model,GUser,GItem,Type,User_EPS,Item_EPS,ndcg_ALL,ndcg_ACT,ndcg_INACT,Pre_ALL,Pre_ACT,Pre_INACT,Rec_ALL,Rec_ACT,Rec_INACT,Nov_ALL,Nov_ACT,Nov_INACT,Cov_ALL,Cov_ACT,Cov_INACT,Short_Items,Long_Items,All_Items\n")
                         results_df = pd.DataFrame(columns=[
                             "Dataset", "Model", "GUser", "GItem", "Type", "User_EPS", "Item_EPS",
                             "ndcg_ALL", "ndcg_ACT", "ndcg_INACT", "Pre_ALL", "Pre_ACT", "Pre_INACT",
@@ -324,3 +321,5 @@ class Experiment():
                         results_df = clean_results(results_df)
                         results_df.to_csv(
                             f"results/{experiment_time_run}/results_{dataset}_{model.name}.csv", index=False)
+                        
+                        return results_df
