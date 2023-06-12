@@ -116,7 +116,11 @@ class Experiment():
             os.mkdir('results')
         os.mkdir('results/' + experiment_time_run)
 
+        experiment_results = {}
+
         for dataset in self.config['ds_names']:
+            experiment_results[dataset] = []
+
             eval_method, total_users, total_items, \
                 train_checkins, pop_items, ground_truth, exp = _run_cornac_experiment(
                     dataset, deepcopy(self.models), self.metrics)
@@ -321,4 +325,7 @@ class Experiment():
                         results_df = clean_results(results_df)
                         results_df.to_csv(
                             f"results/{experiment_time_run}/results_{dataset}_{model.name}.csv", index=False)
+                        
+                        experiment_results[dataset].append(results_df)
+        return experiment_results
                         
