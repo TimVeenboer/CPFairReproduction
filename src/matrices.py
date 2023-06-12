@@ -1,5 +1,5 @@
 import numpy as np
-from tqdm import tqdm
+from tqdm.notebook import tqdm
 
 
 def load_ranking_matrices(model, total_users, total_items, topk):
