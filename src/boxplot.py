@@ -10,13 +10,17 @@ def create_boxplots(path, dataset, df):
 
     # Calculate the average per 'Type' for the 'All' column
     averages = df.groupby('Type')['All'].mean().round(5)
+
+    plt.xlabel('Type', fontsize=14, weight='bold')
+    plt.ylabel('mCPF', fontsize=14)
+    plt.xticks(fontsize=13)
+    plt.yticks(fontsize=13)
     
     # Add average annotations on top of the boxes
     y_min, y_max = plt.ylim()
     for i in range(4):
         average = averages[i]
-        ax.text(i, y_max + 0.02, average, ha='center', va='center', weight='bold')
+        ax.text(i, y_max + 0.03, average, ha='center', va='center', weight='bold', size=14)
 
-    plt.savefig(os.path.join(path, f'{dataset}.png'))
+    plt.savefig(os.path.join(path, f'{dataset}.png'), bbox_inches='tight')
     plt.close()
-    
