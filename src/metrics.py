@@ -91,7 +91,7 @@ def ndcgk(actual, predicted):
     return dcg / idcg
 
 
-def metric_per_group(group: int, W: np.array, ground_truth, pop_items, P: np.array, eval_method: BaseMethod):
+def metric_per_group(group: list, W: np.array, ground_truth, pop_items, P: np.array, eval_method: BaseMethod):
     NDCG10 = list()
     Pre10 = list()
     Rec10 = list()
