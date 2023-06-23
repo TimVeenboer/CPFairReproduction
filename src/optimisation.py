@@ -237,7 +237,7 @@ def fairness_optimisation_dcg_change(
     elif fairness_mode == 'C':
         ### C-Fairness: NDCG_Best: group_ndcg_v[1] - group_ndcg_v[0] ###
         model.objective = maximize(xsum(
-            (S[i][j] * W[i][j]) for i in V1 for j in V2)) - uepsilon * (group_ndcg_v[0] - group_ndcg_v[1])
+            (S[i][j] * W[i][j]) for i in V1 for j in V2) - uepsilon * (group_ndcg_v[0] - group_ndcg_v[1]))
     elif fairness_mode == 'P':
         model.objective = maximize(xsum(
             (S[i][j] * W[i][j]) for i in V1 for j in V2) - iepsilon * (item_group[0] - item_group[1]))
