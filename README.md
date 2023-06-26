@@ -1,40 +1,14 @@
-# CPFairRecSys
-The re-ranking method for a fair recommendation w.r.t both users and items dimension.
+# CPfair Reproduction
 
-## Some Statistics
-<img src="./contents/statistics.png" alt="some statistics of the papers" width="350" height="220"/>
+This is a reproduction of the CPfair paper published by Naghiaei et al. This repository contains both the means to reproduce the results presented in the paper, as well as an extension upon the original research. 
 
-## Dataset Prepration
-- **ratings_data.txt**: `user-item interactions (raw file)` (by download, from Cornac or another resource)
-- **[DatasetName]_data.txt**: This file is a `k-core` file that the users and items ids are mapped to a new range of indecies.
+## Setup
 
-## Datasets
-All the datasets used in the experiments are in the `datasets` folder. Each dataset contains several files and a folder including:
+A Gurobi license is **required** to run this repository. We refer the reader to [Gurobi](https://www.gurobi.com/) to request an Academic or Commercial license. Once obtained, place this license in your home folder. Thereafter you can run the setup by running the designated bash script `setup.sh` in the root folder of this repository. If this fails, separately install the python requirements listed in `environment.yml`, install `libpython3.7` and install gurobi in your conda environment by running the command `conda install -c gurobi gurobi`.
 
-- **Folder:**
-  - groups: includes two sub-folders, `items` and `users`, in the items folder we have the item groups (`longtail_items.txt` and `shorthead_items.txt`) and in users folder we have two folders (`005` and `020`) each includes two user group files, i.e., `active_ids.txt` and `inactive_ids.txt`.
-- **Files:**
-  - ratings_data.txt
-  - [DatasetName]_data.txt
-  - [DatasetName]_inters.txt
-  - [DatasetName]_train.txt
-  - [DatasetName]_test.txt
-  - [DatasetName]_tune.txt
+The original results can be produced by accessing the notebook run.ipynb, which utilizes the `Experiment` class and the `table_reproduction.yaml` config in the first cell. This will provide the user with the tables and boxplots presented in the paper. The results for the Variational AutoEncoder for Collaborative Filtering differ from the original paper; we're uncertain as to why these results deviate so significantly from the paper since the setup of the experiment has been identical to that of the authors.
 
-## Model
-To run them model you need to run the `fair_model` notebook:
-```
-https://colab.research.google.com/github/rahmanidashti/CPFairRecSys/blob/main/fair_model.ipynb
-```
-## Team
-<a href="https://www.linkedin.com/in/ehsan-naghiaei/">Mohammadmehdi Naghiaei</a>, DECIDE, University of Southern California
-
-<a href="http://rahmanidashti.github.io/">Hossein A. Rahmani</a>, Web Intelligence Group, UCL
-
-<a href="https://yasdel.github.io/">Yashar Deldjoo</a>, SisInf Lab, Polytechnic University of Bari
-
-## Citation
-If you use our source code, dataset, and experiments for your research or development, please cite the following paper:
+## Extensions 
 
 ```
 @inproceedings{naghiaei2022cpfairness,
@@ -57,6 +31,3 @@ url = {https://www.sciencedirect.com/science/article/pii/S2665963822000835},
 author = {Mohammadmehdi Naghiaei and Hossein A. Rahmani and Yashar Deldjoo}
 }
 ```
-
-## Contact
-If you have any questions, do not hesitate to contact us by `h.rahmani@ucl.ac.uk` or `rahmanidashti@gmail.com`, we will be happy to assist.

@@ -107,11 +107,7 @@ class ExtensionProportional(Experiment):
                                     U=U,
                                     Ihelp=Ihelp,
                                     Ahelp=Ahelp,
-                                    train_checkins=train_checkins,
-                                    active_user_size=active_user_size,
-                                    inactive_user_size=inactive_user_size,
-                                    shorthead_size=shorthead_size,
-                                    longtail_size=longtail_size)
+                                    train_checkins=train_checkins)
 
                                 _write_experiment_results(
                                     results_df=results_df,
@@ -146,11 +142,7 @@ class ExtensionProportional(Experiment):
                                         U=U,
                                         Ihelp=Ihelp,
                                         Ahelp=Ahelp,
-                                        train_checkins=train_checkins,
-                                        active_user_size=active_user_size,
-                                        inactive_user_size=inactive_user_size,
-                                        shorthead_size=shorthead_size,
-                                        longtail_size=longtail_size)
+                                        train_checkins=train_checkins)
 
                                     _write_experiment_results(
                                         results_df=results_df,
@@ -185,11 +177,7 @@ class ExtensionProportional(Experiment):
                                         U=U,
                                         Ihelp=Ihelp,
                                         Ahelp=Ahelp,
-                                        train_checkins=train_checkins,
-                                        active_user_size=active_user_size,
-                                        inactive_user_size=inactive_user_size,
-                                        shorthead_size=shorthead_size,
-                                        longtail_size=longtail_size)
+                                        train_checkins=train_checkins)
 
                                     _write_experiment_results(
                                         results_df=results_df,
@@ -225,11 +213,7 @@ class ExtensionProportional(Experiment):
                                             U=U,
                                             Ihelp=Ihelp,
                                             Ahelp=Ahelp,
-                                            train_checkins=train_checkins,
-                                            active_user_size=active_user_size,
-                                            inactive_user_size=inactive_user_size,
-                                            shorthead_size=shorthead_size,
-                                            longtail_size=longtail_size)
+                                            train_checkins=train_checkins)
 
                                         _write_experiment_results(
                                             results_df=results_df,
