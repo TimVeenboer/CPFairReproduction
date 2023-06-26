@@ -8,7 +8,11 @@ A Gurobi license is **required** to run this repository. We refer the reader to 
 
 The original results can be produced by accessing the notebook run.ipynb, which utilizes the `Experiment` class and the `table_reproduction.yaml` config in the first cell. This will provide the user with the tables and boxplots presented in the paper. The results for the Variational AutoEncoder for Collaborative Filtering differ from the original paper; we're uncertain as to why these results deviate so significantly from the paper since the setup of the experiment has been identical to that of the authors.
 
-## Extensions 
+## Extensions
+
+This repository contains two extensions upon the original paper, though the first extension is essentially repairing and restructuring the code of the original codebase. The initial optimisation of the authors contained quite a few mistakes; therefore it did not correspond with the mathematics and explanation of the code given in the paper. The reader can run this refactored experiment within `run.ipynb`, under the name of `ExperimentDCG`.
+
+The second extension calculates the Deviation in Consumer Fairness (DCF) and Deviation in Producer Fairness (DPF) - both explained in the paper - proportional to the group size of the groups used in the optimisation. This can again be run with a cell in `run.ipynb`, which utilizes the class `ExperimentProportional`.
 
 ```
 @inproceedings{naghiaei2022cpfairness,
