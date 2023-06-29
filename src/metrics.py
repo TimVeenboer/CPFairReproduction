@@ -80,7 +80,7 @@ def precisionk(actual, predicted):
 def recallk(actual, predicted):
     return 1.0 * len(set(actual) & set(predicted)) / len(actual)
 
-
+### CHANGE
 def ndcgk(actual, predicted):
     idcg = 1.0
     dcg = 1.0 if predicted[0] in actual else 0.0
@@ -89,6 +89,7 @@ def ndcgk(actual, predicted):
             dcg += 1.0 / np.log2(i+2)
         idcg += 1.0 / np.log2(i+2)
     return dcg / idcg
+### END CHANGE
 
 
 def metric_per_group(group: list, W: np.array, ground_truth, pop_items, P: np.array, eval_method: BaseMethod):
